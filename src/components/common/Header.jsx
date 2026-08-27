@@ -7,28 +7,16 @@ export function Header() {
   return (
     <header className="bg-[#0e0e0e] text-white border-b border-[#222222] select-none sticky top-0 z-50">
       <div className="w-full flex items-stretch min-h-[90px]">
-        {/* Логотип в оранжевом блоке */}
+        {/* Логотип из public/logo.png */}
         <Link
           to="/"
-          className="bg-[#b86326] hover:bg-[#a6571e] text-white flex flex-col items-center justify-center px-6 sm:px-8 py-3 transition-colors shrink-0 shadow-lg"
+          className="flex items-center justify-center shrink-0 hover:opacity-90 transition-opacity  h-[90px] w-[90px] sm:w-[100px] overflow-hidden shadow-lg"
         >
-          <div className="flex items-center gap-1.5 leading-none">
-            <span className="font-extrabold tracking-tight text-xl sm:text-2xl font-sans">
-              ART
-            </span>
-            <svg
-              className="w-4 h-4 sm:w-5 sm:h-5 fill-white"
-              viewBox="0 0 24 24"
-            >
-              <polygon points="12,2 22,20 2,20" />
-            </svg>
-          </div>
-          <div className="font-black tracking-[0.18em] text-lg sm:text-xl leading-none mt-0.5">
-            KANTE
-          </div>
-          <div className="text-[7px] sm:text-[8px] uppercase tracking-[0.25em] font-semibold text-white/90 mt-1 whitespace-nowrap">
-            Бюро каминов
-          </div>
+          <img
+            src="/logo.png"
+            alt="Art-Kante — Бюро каминов"
+            className="w-full h-full object-contain "
+          />
         </Link>
 
         {/* Десктопное меню (двухуровневое) */}
@@ -43,19 +31,19 @@ export function Header() {
                 Философия
               </Link>
               <Link
-                to="/concepts"
+                to="/design"
                 className="hover:text-[#e0a458] transition-colors"
               >
                 Проектирование
               </Link>
               <Link
-                to="/concepts"
+                to="/portfolio"
                 className="hover:text-[#e0a458] transition-colors"
               >
                 Портфолио
               </Link>
               <Link
-                to="/concepts"
+                to="/inspiration"
                 className="hover:text-[#e0a458] transition-colors"
               >
                 Вдохновение
@@ -70,7 +58,7 @@ export function Header() {
 
             <div className="flex items-center gap-6 xl:gap-8">
               <Link
-                to="/concepts"
+                to="/favorites"
                 className="hover:text-[#e0a458] transition-colors"
               >
                 Избранное
@@ -220,21 +208,21 @@ export function Header() {
                 Философия
               </Link>
               <Link
-                to="/concepts"
+                to="/design"
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-white transition-colors"
               >
                 Проектирование
               </Link>
               <Link
-                to="/concepts"
+                to="/portfolio"
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-white transition-colors"
               >
                 Портфолио
               </Link>
               <Link
-                to="/concepts"
+                to="/inspiration"
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-white transition-colors"
               >
@@ -248,7 +236,7 @@ export function Header() {
                 Каталог
               </Link>
               <Link
-                to="/concepts"
+                to="/favorites"
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-white transition-colors"
               >

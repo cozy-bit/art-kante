@@ -28,7 +28,7 @@ export function Button({
   return (
     <button
       className={cn(
-        'inline-flex items-center justify-center rounded-[2px] cursor-pointer select-none disabled:pointer-events-none disabled:opacity-50',
+        'inline-flex items-center justify-center rounded-none cursor-pointer select-none disabled:pointer-events-none disabled:opacity-50',
         variants[variant] || variants.default,
         sizes[size] || sizes.default,
         className
