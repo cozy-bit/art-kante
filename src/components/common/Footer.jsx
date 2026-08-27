@@ -7,25 +7,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16">
           {/* Левая колонка: Логотип + Навигация + Политика */}
           <div className="md:col-span-4 lg:col-span-3 space-y-6">
-            {/* Квадратный логотип */}
+            {/* Квадратный логотип из public/logo.png */}
             <Link
               to="/"
-              className="bg-[#b86326] hover:bg-[#a6571e] text-white inline-flex flex-col items-center justify-center w-28 h-28 transition-colors shadow-lg"
+              className="bg-[#b86326] hover:bg-[#a6571e] inline-flex items-center justify-center w-28 h-28 transition-colors shadow-lg overflow-hidden p-2"
             >
-              <div className="flex items-center gap-1 leading-none">
-                <span className="font-extrabold tracking-tight text-2xl font-sans">
-                  ART
-                </span>
-                <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
-                  <polygon points="12,2 22,20 2,20" />
-                </svg>
-              </div>
-              <div className="font-black tracking-[0.18em] text-xl leading-none mt-0.5">
-                KANTE
-              </div>
-              <div className="text-[7.5px] uppercase tracking-[0.2em] font-semibold text-white/90 mt-1 whitespace-nowrap">
-                Бюро каминов
-              </div>
+              <img
+                src="/logo.png"
+                alt="Art-Kante — Бюро каминов"
+                className="w-full h-full object-contain"
+              />
             </Link>
 
             {/* Ссылки */}
