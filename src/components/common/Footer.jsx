@@ -28,13 +28,13 @@ export function Footer() {
                 Философия
               </Link>
               <Link
-                to="/concepts"
+                to="/design"
                 className="hover:text-[#b86326] transition-colors"
               >
                 Проектирование
               </Link>
               <Link
-                to="/concepts"
+                to="/inspiration"
                 className="hover:text-[#b86326] transition-colors"
               >
                 Вдохновение

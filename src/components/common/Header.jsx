@@ -31,19 +31,19 @@ export function Header() {
                 Философия
               </Link>
               <Link
-                to="/concepts"
+                to="/design"
                 className="hover:text-[#e0a458] transition-colors"
               >
                 Проектирование
               </Link>
               <Link
-                to="/concepts"
+                to="/portfolio"
                 className="hover:text-[#e0a458] transition-colors"
               >
                 Портфолио
               </Link>
               <Link
-                to="/concepts"
+                to="/inspiration"
                 className="hover:text-[#e0a458] transition-colors"
               >
                 Вдохновение
@@ -58,7 +58,7 @@ export function Header() {
 
             <div className="flex items-center gap-6 xl:gap-8">
               <Link
-                to="/concepts"
+                to="/favorites"
                 className="hover:text-[#e0a458] transition-colors"
               >
                 Избранное
@@ -208,21 +208,21 @@ export function Header() {
                 Философия
               </Link>
               <Link
-                to="/concepts"
+                to="/design"
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-white transition-colors"
               >
                 Проектирование
               </Link>
               <Link
-                to="/concepts"
+                to="/portfolio"
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-white transition-colors"
               >
                 Портфолио
               </Link>
               <Link
-                to="/concepts"
+                to="/inspiration"
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-white transition-colors"
               >
@@ -236,7 +236,7 @@ export function Header() {
                 Контакты
               </Link>
               <Link
-                to="/concepts"
+                to="/favorites"
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-white transition-colors"
               >
