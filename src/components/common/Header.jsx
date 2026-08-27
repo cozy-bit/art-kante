@@ -61,10 +61,10 @@ export function Header() {
                 Вдохновение
               </Link>
               <Link
-                to="/philosophy"
+                to="/concepts"
                 className="hover:text-[#e0a458] transition-colors"
               >
-                Контакты
+                Каталог
               </Link>
             </nav>
 
@@ -241,11 +241,11 @@ export function Header() {
                 Вдохновение
               </Link>
               <Link
-                to="/philosophy"
+                to="/concepts"
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-white transition-colors"
               >
-                Контакты
+                Каталог
               </Link>
               <Link
                 to="/concepts"

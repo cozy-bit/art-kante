@@ -1,3 +1,8 @@
+import { Project } from '../Project/Project'
+
 export function Concepts() {
-  return <div>Concepts Page</div>
+  return <Project />
 }
+
+export default Concepts
+
