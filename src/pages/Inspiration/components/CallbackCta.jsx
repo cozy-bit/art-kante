@@ -34,10 +34,10 @@ export function CallbackCta() {
   }
 
   return (
-    <section className='flex justify-center pb-16 sm:pb-20'>
+    <section className='flex justify-center pb-20 sm:pb-28'>
       <Button
         onClick={() => setIsOpen(true)}
-        className='w-full max-w-md px-6 py-4 text-xs sm:w-auto sm:px-16 sm:text-sm'
+        className='w-full max-w-xl px-6 py-5 text-xs sm:text-sm'
       >
         Заказать обратный звонок
       </Button>

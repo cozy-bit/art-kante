@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Card } from '../../../components/ui/Card'
 import { PRESS_SPREADS } from '../data/pressSpreads'
 
@@ -13,71 +13,41 @@ export function FounderShowcase() {
   const visible = [PRESS_SPREADS[index], PRESS_SPREADS[(index + 1) % total]]
 
   return (
-    <section className='py-14 sm:py-20'>
-      <Card variant='inset' className='rounded-none p-6 sm:p-10 lg:p-14'>
-        <h2 className='text-center text-2xl sm:text-3xl font-light tracking-wide text-white'>
+    <section className='py-16 sm:py-24'>
+      <Card variant='inset' className='rounded-lg p-8 sm:p-12 lg:p-16'>
+        <h2 className='text-center text-2xl font-light tracking-wide text-white sm:text-3xl'>
           Об основателе
         </h2>
 
-        <div className='mt-4 flex items-center justify-center gap-10'>
+        <div className='mt-5 flex items-center justify-center gap-12'>
           <button
             type='button'
             onClick={goPrev}
             aria-label='Предыдущий разворот'
-            className='text-white/50 hover:text-[#e03122] transition-colors cursor-pointer'
+            className='cursor-pointer text-white/55 transition-colors hover:text-white'
           >
-            <ChevronLeft className='h-6 w-6' strokeWidth={1.5} />
+            <ArrowLeft className='h-5 w-5' strokeWidth={1.5} />
           </button>
           <button
             type='button'
             onClick={goNext}
             aria-label='Следующий разворот'
-            className='text-white/50 hover:text-[#e03122] transition-colors cursor-pointer'
+            className='cursor-pointer text-white/55 transition-colors hover:text-white'
           >
-            <ChevronRight className='h-6 w-6' strokeWidth={1.5} />
+            <ArrowRight className='h-5 w-5' strokeWidth={1.5} />
           </button>
         </div>
 
-        <div className='mt-8 sm:mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 justify-items-center'>
+        <div className='mt-10 grid grid-cols-1 justify-items-center gap-6 lg:grid-cols-2 lg:gap-8'>
           {visible.map((spread, i) => (
-            <figure
+            <img
               key={`${spread.id}-${i}`}
+              src={spread.image}
+              alt='Публикация об основателе бюро'
               className={
                 i === 1
-                  ? 'hidden lg:flex flex-col items-center w-full max-w-[440px]'
-                  : 'flex flex-col items-center w-full max-w-[440px]'
-              }
-            >
-              <div className='w-full overflow-hidden rounded-sm border border-white/10 shadow-[10px_10px_28px_rgba(0,0,0,0.85)]'>
-                <img
-                  src={spread.image}
-                  alt={spread.title}
-                  className='h-52 sm:h-64 w-full object-cover'
-                />
-              </div>
-              <figcaption className='mt-3 text-center'>
-                <div className='text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-[#e03122]'>
-                  {spread.title}
-                </div>
-                <div className='mt-1 text-[11px] text-white/40'>
-                  {spread.edition}
-                </div>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-
-        <div className='mt-8 flex justify-center gap-2'>
-          {PRESS_SPREADS.map((spread, i) => (
-            <button
-              type='button'
-              key={spread.id}
-              onClick={() => setIndex(i)}
-              aria-label={`Разворот ${i + 1}`}
-              className={
-                i === index
-                  ? 'h-1.5 w-6 bg-[#e03122] transition-all'
-                  : 'h-1.5 w-2.5 bg-white/20 hover:bg-white/40 transition-all'
+                  ? 'hidden w-full max-w-[500px] rounded-sm lg:block'
+                  : 'w-full max-w-[500px] rounded-sm'
               }
             />
           ))}
