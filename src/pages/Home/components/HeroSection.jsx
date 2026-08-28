@@ -112,9 +112,8 @@ export function HeroSection({
 
         {/* 4. Статично закрепленная нижняя панель управления: Защита от спам-кликов и 7-секундная шкала */}
         <div
-          className={`absolute bottom-8 sm:bottom-12 md:bottom-14 left-6 sm:left-10 md:left-14 lg:left-16 z-20 flex items-center gap-8 sm:gap-12 transition-opacity duration-300 ${
-            isAnimating ? 'pointer-events-none' : 'pointer-events-auto'
-          }`}
+          className={`absolute bottom-8 sm:bottom-12 md:bottom-14 left-6 sm:left-10 md:left-14 lg:left-16 z-20 flex items-center gap-8 sm:gap-12 transition-opacity duration-300 ${isAnimating ? 'pointer-events-none' : 'pointer-events-auto'
+            }`}
         >
           {/* Стрелки увеличенного размера чисто белого цвета */}
           <div className="flex items-center gap-6 sm:gap-8">
