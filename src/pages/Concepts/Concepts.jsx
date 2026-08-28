@@ -2,6 +2,7 @@ import { Box, Check, ChevronDown, Heart, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '../../components/ui/Button'
+import { ShowroomsBlock } from '../../components/common/ShowroomsBlock'
 import images from '../../data/project-page-datas/datas'
 import {
 	getFavorites,
@@ -34,34 +35,6 @@ export function Concepts() {
 	const [selectedStyle, setSelectedStyle] = useState('КЛАССИЧЕСКИЕ')
 	const [visibleCount, setVisibleCount] = useState(20)
 
-	// Состояние модального окна "Заказать обратный звонок"
-	const [isModalOpen, setIsModalOpen] = useState(false)
-	const [formSubmitted, setFormSubmitted] = useState(false)
-	const [formData, setFormData] = useState({
-		name: '',
-		phone: '',
-		agree: true,
-	})
-
-	// Закрытие модального окна по Escape
-	useEffect(() => {
-		const handleKeyDown = e => {
-			if (e.key === 'Escape') {
-				setIsModalOpen(false)
-			}
-		}
-		if (isModalOpen) {
-			document.body.style.overflow = 'hidden'
-			window.addEventListener('keydown', handleKeyDown)
-		} else {
-			document.body.style.overflow = 'unset'
-		}
-		return () => {
-			document.body.style.overflow = 'unset'
-			window.removeEventListener('keydown', handleKeyDown)
-		}
-	}, [isModalOpen])
-
 	const toggleFavorite = item => {
 		const exists = favorites.some(fav => fav.id === item.id)
 		let updated
@@ -82,16 +55,6 @@ export function Concepts() {
 
 	const handleShowMore = () => {
 		setVisibleCount(prev => prev + 8)
-	}
-
-	const handleFormSubmit = e => {
-		e.preventDefault()
-		setFormSubmitted(true)
-		setTimeout(() => {
-			setFormSubmitted(false)
-			setIsModalOpen(false)
-			setFormData({ name: '', phone: '', agree: true })
-		}, 2000)
 	}
 
 	return (
@@ -462,236 +425,10 @@ export function Concepts() {
 					</div>
 				</section>
 
-				{/* Блок Шоурума: ЦЕНТР ДИЗАЙНА ARTPLAY строение 12 */}
-				<section className='mb-10 sm:mb-20'>
-					<div className='max-w-5xl mx-auto rounded-xl sm:rounded-2xl p-5 sm:p-10 lg:p-12 bg-[#121212] border border-white/5 shadow-[inset_10px_10px_30px_rgba(0,0,0,0.9),inset_-4px_-4px_16px_rgba(255,255,255,0.02)]'>
-						{/* Верхний текст и заголовки */}
-						<div className='text-center mb-6 sm:mb-10'>
-							<p className='text-[11px] sm:text-[13px] text-white/70 tracking-wide mb-2 font-light leading-snug'>
-								Приглашаем: комфортно, удобно для встреч и переговоров шоурум:
-							</p>
-							<h2 className='text-[#df8f37] text-base sm:text-2xl font-semibold tracking-[0.25em] sm:tracking-[0.45em] uppercase'>
-								Ц Е Н Т Р &nbsp; Д И З А Й Н А
-							</h2>
-							<h2 className='text-[#df8f37] text-base sm:text-2xl font-semibold tracking-[0.25em] sm:tracking-[0.45em] uppercase mt-0.5 sm:mt-1'>
-								A R T P L A Y
-							</h2>
-							<h3 className='text-[#df8f37] text-xs sm:text-lg font-medium tracking-[0.3em] sm:tracking-[0.4em] uppercase mt-1'>
-								с т р о е н и е &nbsp; 1 2
-							</h3>
-						</div>
-
-						{/* Контент шоурума (на мобилке последовательно фото1, фото2, инфо; на десктопе 3 колонки) */}
-						<div className='flex flex-col md:grid md:grid-cols-3 gap-6 lg:gap-8 items-center'>
-							{/* Шоурум 106 */}
-							<div className='w-full flex flex-col items-center order-1 md:order-1'>
-								<div className='w-full overflow-hidden rounded-lg border border-white/10 shadow-lg group'>
-									<img
-										src={images[0]?.image}
-										alt='Шоурум 106'
-										className='w-full h-48 sm:h-52 md:h-44 lg:h-48 object-cover group-hover:scale-105 transition-transform duration-500'
-									/>
-								</div>
-								<div className='text-[#df8f37] text-xs sm:text-sm font-medium tracking-[0.3em] uppercase mt-2.5 text-center'>
-									Ш о у р у м &nbsp; 1 0 6
-								</div>
-							</div>
-
-							{/* Шоурум 112 (на мобилке идет вторым) */}
-							<div className='w-full flex flex-col items-center order-2 md:order-3'>
-								<div className='w-full overflow-hidden rounded-lg border border-white/10 shadow-lg group'>
-									<img
-										src={images[1]?.image || images[4]?.image}
-										alt='Шоурум 112'
-										className='w-full h-48 sm:h-52 md:h-44 lg:h-48 object-cover group-hover:scale-105 transition-transform duration-500'
-									/>
-								</div>
-								<div className='text-[#df8f37] text-xs sm:text-sm font-medium tracking-[0.3em] uppercase mt-2.5 text-center'>
-									Ш о у р у м &nbsp; 1 1 2
-								</div>
-							</div>
-
-							{/* Часы работы и адрес */}
-							<div className='w-full flex flex-col items-center text-center space-y-4 sm:space-y-5 px-2 order-3 md:order-2'>
-								<div>
-									<div className='text-[11px] sm:text-xs font-bold text-white tracking-widest uppercase mb-1'>
-										ЧАСЫ РАБОТЫ:
-									</div>
-									<div className='text-xs text-white/70 space-y-0.5 font-light'>
-										<div>ПН-ПТ 11:00 - 20:00</div>
-										<div>СБ 12:00 - 18:00</div>
-										<div>ВС по согласованию</div>
-									</div>
-								</div>
-
-								<div>
-									<div className='text-[11px] sm:text-xs font-bold text-white tracking-widest uppercase mb-1'>
-										АДРЕС:
-									</div>
-									<div className='text-xs text-white/70 leading-relaxed font-light'>
-										105120, г. Москва, ул.
-										<br />
-										Сыромятническая Нижняя,
-										<br />
-										д.10, стр.12,
-										<br />
-										м. Курская, м. Чкаловская
-									</div>
-								</div>
-							</div>
-						</div>
-
-						{/* Нижняя ссылка на карту */}
-						<div className='text-center mt-6 sm:mt-8'>
-							<a
-								href='https://yandex.ru/maps'
-								target='_blank'
-								rel='noreferrer'
-								className='text-[#df8f37] hover:text-[#f3a44d] text-[10px] sm:text-xs font-semibold uppercase tracking-[0.18em] underline underline-offset-4 transition-colors inline-block leading-relaxed'
-							>
-								открыть на яндекс картах / прямо от метро
-							</a>
-						</div>
-					</div>
-				</section>
-
-				{/* Большая кнопка "ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК" */}
-				<section className='flex justify-center mb-10 sm:mb-16'>
-					<Button
-						variant='default'
-						onClick={() => setIsModalOpen(true)}
-						className='w-full sm:w-auto max-w-sm px-6 sm:px-16 py-3.5 sm:py-4.5 text-xs sm:text-sm'
-					>
-						ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК
-					</Button>
-				</section>
 			</div>
 
-			{/* Модальное окно "Заказать обратный звонок" */}
-			{isModalOpen && (
-				<div
-					className='fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200'
-					onClick={e => {
-						if (e.target === e.currentTarget) setIsModalOpen(false)
-					}}
-				>
-					<div className='relative w-full max-w-[580px] bg-[#0d0d0d] rounded-none sm:rounded-sm overflow-hidden border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.95)]'>
-						{/* Кнопка закрытия (X) */}
-						<button
-							type='button'
-							onClick={() => setIsModalOpen(false)}
-							className='absolute top-4 right-4 sm:top-5 sm:right-5 z-20 text-white/70 hover:text-white transition-colors cursor-pointer p-1'
-							aria-label='Закрыть'
-						>
-							<X className='w-5 h-5 sm:w-6 sm:h-6' strokeWidth={1.5} />
-						</button>
-
-						{/* Верхний баннер заголовка */}
-						<div className='bg-[#171717] px-6 py-6 sm:py-8 text-center border-b border-white/5'>
-							<h2 className='text-lg sm:text-xl md:text-2xl font-normal tracking-wide text-white'>
-								<span className='sm:hidden block'>Заказать обратный</span>
-								<span className='sm:hidden block font-medium uppercase text-base mt-0.5'>
-									ЗВОНОК
-								</span>
-								<span className='hidden sm:inline'>
-									Заказать обратный звонок
-								</span>
-							</h2>
-						</div>
-
-						{/* Основное тело модалки с формой */}
-						<div className='relative px-6 py-8 sm:py-10 bg-[#0c0c0c] overflow-hidden'>
-							{formSubmitted ? (
-								<div className='text-center py-6 space-y-2 text-white'>
-									<div className='w-12 h-12 mx-auto rounded-full bg-[#f37021]/20 flex items-center justify-center text-[#f37021] mb-3'>
-										<Check className='w-6 h-6' strokeWidth={2.5} />
-									</div>
-									<h3 className='text-base font-medium'>Спасибо за заявку!</h3>
-									<p className='text-xs text-white/70'>
-										Мы свяжемся с вами в ближайшее время.
-									</p>
-								</div>
-							) : (
-								<form
-									onSubmit={handleFormSubmit}
-									className='max-w-[340px] mx-auto space-y-4 relative z-10'
-								>
-									{/* Поле "Ваше имя" */}
-									<div>
-										<input
-											type='text'
-											required
-											placeholder='Ваше имя'
-											value={formData.name}
-											onChange={e =>
-												setFormData({ ...formData, name: e.target.value })
-											}
-											className='w-full px-4 py-3 sm:py-3.5 bg-[#202020] border border-white/5 rounded-none text-xs sm:text-sm text-white placeholder:text-[#777777] focus:outline-none focus:border-[#f37021]/60 transition-colors'
-										/>
-									</div>
-
-									{/* Поле "Ваш телефон" */}
-									<div>
-										<input
-											type='tel'
-											required
-											placeholder='Ваш телефон'
-											value={formData.phone}
-											onChange={e =>
-												setFormData({ ...formData, phone: e.target.value })
-											}
-											className='w-full px-4 py-3 sm:py-3.5 bg-[#202020] border border-white/5 rounded-none text-xs sm:text-sm text-white placeholder:text-[#777777] focus:outline-none focus:border-[#f37021]/60 transition-colors'
-										/>
-									</div>
-
-									{/* Чекбокс согласия */}
-									<div className='flex items-start gap-2.5 pt-1'>
-										<input
-											type='checkbox'
-											id='agree'
-											required
-											checked={formData.agree}
-											onChange={e =>
-												setFormData({ ...formData, agree: e.target.checked })
-											}
-											className='mt-0.5 accent-[#f37021] cursor-pointer rounded-none'
-										/>
-										<label
-											htmlFor='agree'
-											className='text-[10px] sm:text-[11px] text-[#737373] leading-snug cursor-pointer select-none'
-										>
-											Нажимая на кнопку я соглашаюсь с{' '}
-											<span className='underline hover:text-white/80 transition-colors'>
-												политикой конфиденциальности
-											</span>
-										</label>
-									</div>
-
-									{/* Оранжевая кнопка "ОТПРАВИТЬ" */}
-									<div className='pt-2'>
-										<button
-											type='submit'
-											className='w-full py-3.5 sm:py-4 bg-[#f37021] hover:bg-[#e05f13] active:bg-[#c9530e] text-white text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase transition-all duration-200 cursor-pointer shadow-[0_4px_15px_rgba(243,112,33,0.3)] hover:shadow-[0_6px_20px_rgba(243,112,33,0.45)]'
-										>
-											ОТПРАВИТЬ
-										</button>
-									</div>
-								</form>
-							)}
-
-							{/* Декоративное свечение / искры камина внизу модалки */}
-							<div className='absolute -bottom-10 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-gradient-to-t from-[#f37021]/20 via-[#f37021]/5 to-transparent blur-2xl pointer-events-none' />
-							<div className='absolute bottom-0 inset-x-0 h-8 flex justify-around items-end opacity-20 pointer-events-none'>
-								<span className='w-1 h-1 bg-[#f37021] rounded-full blur-[0.5px] animate-pulse' />
-								<span className='w-1.5 h-1.5 bg-[#f37021] rounded-full blur-[0.5px] animate-pulse delay-100' />
-								<span className='w-1 h-1 bg-[#ff9248] rounded-full blur-[0.5px] animate-pulse delay-300' />
-								<span className='w-1.5 h-1.5 bg-[#f37021] rounded-full blur-[0.5px] animate-pulse delay-200' />
-								<span className='w-1 h-1 bg-[#ff9248] rounded-full blur-[0.5px] animate-pulse delay-500' />
-							</div>
-						</div>
-					</div>
-				</div>
-			)}
+			{/* Сквозной блок шоурумов Artplay */}
+			<ShowroomsBlock />
 		</div>
 	)
 }

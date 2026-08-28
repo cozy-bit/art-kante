@@ -14,7 +14,7 @@ export function FounderShowcase() {
 
   return (
     <section className='py-16 sm:py-24'>
-      <Card variant='inset' className='rounded-lg p-8 sm:p-12 lg:p-16'>
+      <Card variant='inset' className='rounded-none p-8 sm:p-12 lg:p-16'>
         <h2 className='text-center text-2xl font-light tracking-wide text-white sm:text-3xl'>
           Об основателе
         </h2>
@@ -46,8 +46,8 @@ export function FounderShowcase() {
               alt='Публикация об основателе бюро'
               className={
                 i === 1
-                  ? 'hidden w-full max-w-[500px] rounded-sm lg:block'
-                  : 'w-full max-w-[500px] rounded-sm'
+                  ? 'hidden w-full max-w-[500px] rounded-none border border-white/10 shadow-2xl lg:block'
+                  : 'w-full max-w-[500px] rounded-none border border-white/10 shadow-2xl'
               }
             />
           ))}

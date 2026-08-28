@@ -11,7 +11,7 @@ export function PhilosophyIntro() {
         <img
           src={introArtkante}
           alt='АРТ КАМИН — проектное бюро'
-          className='w-full self-start rounded-sm'
+          className='w-full self-start rounded-none border border-white/10 shadow-2xl'
         />
 
         <div className='space-y-6 text-sm leading-relaxed sm:text-[15px]'>

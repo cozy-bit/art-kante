@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Heart, Share2, Check } from 'lucide-react'
 import { ArtplayShowrooms } from '../Inspiration/components/ArtplayShowrooms'
-import { CallbackCta } from '../Inspiration/components/CallbackCta'
 import img3 from '../../assets/images/project-images/img3.png'
 import img6 from '../../assets/images/project-images/img6.png'
 import {
@@ -209,9 +208,6 @@ export function Portfolio() {
 
         {/* Блок шоурума ARTPLAY */}
         <ArtplayShowrooms />
-
-        {/* Кнопка "Заказать обратный звонок" с модальным окном */}
-        <CallbackCta />
       </div>
     </div>
   )
