@@ -1,6 +1,5 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-import { Shield, ChevronRight, Mail, Phone, MapPin } from 'lucide-react'
+import { Shield, Mail, Phone, MapPin } from 'lucide-react'
 
 export function Privacy() {
   return (

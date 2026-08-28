@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
@@ -6,13 +6,8 @@ import {
   Share2,
   Check,
   Box,
-  Flame,
-  Layers,
-  ShieldCheck,
-  FileText,
   ChevronLeft,
   ArrowRight,
-  Maximize2,
 } from 'lucide-react'
 import { Button } from '../../components/ui/Button'
 import { ShowroomsBlock } from '../../components/common/ShowroomsBlock'

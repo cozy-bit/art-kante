@@ -1,4 +1,3 @@
-import React from 'react'
 import { Container } from '../../../components/ui/Container'
 import badgesBg from '../../../assets/images/design/design-badges-bg.png'
 

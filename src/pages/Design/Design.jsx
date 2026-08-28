@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import DesignHero from './components/DesignHero'
 import DesignBadges from './components/DesignBadges'
 import ProjectsSlider from './components/ProjectsSlider'

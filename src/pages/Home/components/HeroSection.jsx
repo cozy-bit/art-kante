@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import leftArrowIcon from '../../../assets/icons/left-arrow.png'
@@ -19,14 +19,8 @@ export function HeroSection({
   onSelect,
 }) {
   const currentSlide = items[currentIndex]
-  const prevIndexRef = useRef(currentIndex)
-
-  // Сохраняем предыдущий слайд как статичную подложку
-  useEffect(() => {
-    prevIndexRef.current = currentIndex
-  }, [currentIndex])
-
-  const prevSlide = items[prevIndexRef.current]
+  const prevIndex = (currentIndex - 1 + items.length) % items.length
+  const prevSlide = items[prevIndex]
 
   // Автопереключение слайдов каждые 7 секунд с автосбросом при ручном переключении
   useEffect(() => {

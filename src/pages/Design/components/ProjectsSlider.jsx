@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Container } from '../../../components/ui/Container'
 import projectSlide1 from '../../../assets/images/design/project-slide-1.png'
 import projectSlide2 from '../../../assets/images/design/project-slide-2.png'

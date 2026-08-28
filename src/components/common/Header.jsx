@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Phone, ChevronRight, ArrowRight } from 'lucide-react'
@@ -74,11 +74,12 @@ export function Header() {
   const closeTimeoutRef = useRef(null)
   const location = useLocation()
 
-  // Закрывать меню при переходе по ссылке
-  useEffect(() => {
+  const [prevLocationKey, setPrevLocationKey] = useState(location.key)
+  if (prevLocationKey !== location.key) {
+    setPrevLocationKey(location.key)
     setMobileMenuOpen(false)
     setActiveCategory(null)
-  }, [location.pathname, location.search])
+  }
 
   // Безопасный ховер с задержкой 160мс для плавного перехода
   const handleCategoryMouseEnter = (id) => {

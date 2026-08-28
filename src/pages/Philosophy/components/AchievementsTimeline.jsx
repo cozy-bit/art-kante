@@ -1,4 +1,4 @@
-import React, { useRef, useState, useLayoutEffect, useEffect } from 'react'
+import { useRef, useState, useLayoutEffect, useEffect } from 'react'
 import { ACHIEVEMENTS } from '../data/achievements'
 
 function TargetNode({ className = '' }) {

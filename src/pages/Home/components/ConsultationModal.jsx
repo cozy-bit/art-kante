@@ -13,9 +13,6 @@ export function ConsultationModal({ isOpen, onClose, data }) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
-      setIsSubmitted(false)
-      setError('')
-
       const handleKeyDown = (e) => {
         if (e.key === 'Escape') {
           onClose()
