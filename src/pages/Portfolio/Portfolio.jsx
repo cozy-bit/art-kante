@@ -131,9 +131,9 @@ export function Portfolio() {
                       {item.title}
                     </h2>
 
-                    {/* Блок изображений (основное + боковой ракурс) */}
-                    <div className="flex gap-1 sm:gap-1.5 h-44 sm:h-56 md:h-60 lg:h-72 w-full overflow-hidden bg-[#141414]">
-                      <div className="w-[78%] h-full overflow-hidden">
+                    {/* Блок изображений (основное + боковой ракурс) с отступом */}
+                    <div className="flex gap-2.5 sm:gap-3.5 md:gap-4 h-44 sm:h-56 md:h-60 lg:h-72 w-full overflow-hidden">
+                      <div className="flex-1 h-full overflow-hidden bg-[#141414]">
                         <img
                           src={item.mainImage}
                           alt={item.title}
@@ -141,7 +141,7 @@ export function Portfolio() {
                           loading="lazy"
                         />
                       </div>
-                      <div className="w-[22%] h-full overflow-hidden">
+                      <div className="w-[20%] sm:w-[22%] h-full overflow-hidden bg-[#141414]">
                         <img
                           src={item.sideImage}
                           alt={`${item.title} деталь`}
