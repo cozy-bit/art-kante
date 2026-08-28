@@ -20,7 +20,7 @@ function App() {
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="inspiration" element={<Inspiration />} />
           <Route path="concepts" element={<Concepts />} />
-          <Route path="concepts/:id" element={<Project />} />
+          <Route path="project" element={<Project />} />
           <Route path="philosophy" element={<Philosophy />} />
         </Route>
       </Routes>
