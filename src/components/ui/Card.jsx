@@ -26,7 +26,7 @@ export function Card({
   return (
     <div
       className={cn(
-        'rounded-2xl p-6 md:p-10 transition-all duration-300',
+        'rounded-none p-6 md:p-10 transition-all duration-300',
         variants[variant] || variants.default,
         className
       )}

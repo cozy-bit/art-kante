@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import leftArrowIcon from '../../../assets/icons/left-arrow.png'
 import rightArrowIcon from '../../../assets/icons/right-arrow.png'
@@ -101,10 +102,19 @@ export function HeroSection({
               </p>
 
               {/* Слоган */}
-              <div className="pt-6 sm:pt-10 md:pt-12">
+              <div className="pt-5 sm:pt-8 md:pt-10 space-y-4 sm:space-y-5">
                 <p className="text-[11px] sm:text-xs md:text-sm lg:text-base font-normal text-white uppercase tracking-[0.24em] sm:tracking-[0.32em]">
                   {currentSlide.slogan}
                 </p>
+
+                <div>
+                  <Link
+                    to="/concepts"
+                    className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 bg-[#b86326] hover:bg-[#a6571e] text-white text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 shadow-[0_4px_20px_rgba(184,99,38,0.4)] hover:shadow-[0_6px_25px_rgba(184,99,38,0.6)] active:scale-95 cursor-pointer rounded-none"
+                  >
+                    СМОТРЕТЬ ПРОЕКТЫ
+                  </Link>
+                </div>
               </div>
             </motion.div>
           </AnimatePresence>

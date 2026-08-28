@@ -1,8 +1,9 @@
 export const ACHIEVEMENTS = [
   {
     year: '2021',
-    side: 'right',
-    offset: '38%',
+    nodeOffset: 45,
+    yearSide: 'left',
+    listSide: 'right',
     items: [
       'Участие в конференции',
       'Обучение сотрудников',
@@ -15,8 +16,9 @@ export const ACHIEVEMENTS = [
   },
   {
     year: '2020',
-    side: 'right',
-    offset: '8%',
+    nodeOffset: 20,
+    yearSide: 'left',
+    listSide: 'right',
     items: [
       'Участие в конференции',
       'Обучение сотрудников',
@@ -27,8 +29,9 @@ export const ACHIEVEMENTS = [
   },
   {
     year: '2019',
-    side: 'left',
-    offset: '62%',
+    nodeOffset: 68,
+    yearSide: 'right',
+    listSide: 'left',
     items: [
       'Участие в конференции',
       'Поставили камин Путину',
@@ -43,8 +46,9 @@ export const ACHIEVEMENTS = [
   },
   {
     year: '2018',
-    side: 'right',
-    offset: '24%',
+    nodeOffset: 32,
+    yearSide: 'left',
+    listSide: 'right',
     items: [
       'Участие в конференции',
       'Обучение сотрудников',
@@ -57,8 +61,9 @@ export const ACHIEVEMENTS = [
   },
   {
     year: '2017',
-    side: 'left',
-    offset: '76%',
+    nodeOffset: 78,
+    yearSide: 'right',
+    listSide: 'left',
     items: [
       'Участие в конференции',
       'Поставили камин Путину',
@@ -73,16 +78,15 @@ export const ACHIEVEMENTS = [
   },
   {
     year: '2016',
-    side: 'right',
-    offset: '38%',
+    nodeOffset: 45,
+    yearSide: 'left',
+    listSide: 'right',
     items: [
       'Участие в конференции',
       'Обучение сотрудников',
       'Печанная конференция',
       'Мыльные пузыри',
       'Номинанты на оскар печей',
-      'Поставили камин Путину',
-      'Выиграли у всех',
     ],
   },
 ]

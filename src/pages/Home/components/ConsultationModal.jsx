@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { X, CheckCircle, Phone, User, MessageSquare } from 'lucide-react'
 import { Button } from '../../../components/ui/Button'
 
@@ -14,13 +15,21 @@ export function ConsultationModal({ isOpen, onClose, data }) {
       document.body.style.overflow = 'hidden'
       setIsSubmitted(false)
       setError('')
+
+      const handleKeyDown = (e) => {
+        if (e.key === 'Escape') {
+          onClose()
+        }
+      }
+      window.addEventListener('keydown', handleKeyDown)
+      return () => {
+        document.body.style.overflow = 'unset'
+        window.removeEventListener('keydown', handleKeyDown)
+      }
     } else {
       document.body.style.overflow = 'unset'
     }
-    return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [isOpen])
+  }, [isOpen, onClose])
 
   if (!isOpen) return null
 
@@ -75,8 +84,8 @@ export function ConsultationModal({ isOpen, onClose, data }) {
         ) : (
           <div>
             {/* Заголовок модального окна */}
-            <div className="text-center space-y-2 mb-6">
-              <h3 className="text-lg sm:text-xl font-bold tracking-[0.16em] text-white uppercase">
+            <div className="text-center space-y-2 mb-6 px-6 sm:px-10 pt-3 sm:pt-4">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold tracking-[0.14em] text-white uppercase leading-snug">
                 {data?.title || 'ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ'}
               </h3>
               <p className="text-xs sm:text-sm text-white/70 font-light">
@@ -158,8 +167,15 @@ export function ConsultationModal({ isOpen, onClose, data }) {
               </div>
 
               <p className="text-[10px] text-white/40 text-center leading-relaxed">
-                Нажимая кнопку, вы соглашаетесь с условиями политики конфиденциальности и обработки
-                персональных данных
+                Нажимая кнопку, вы соглашаетесь с условиями{' '}
+                <Link
+                  to="/privacy"
+                  onClick={onClose}
+                  className="underline hover:text-white transition-colors"
+                >
+                  политики конфиденциальности
+                </Link>{' '}
+                и обработки персональных данных
               </p>
             </form>
           </div>
