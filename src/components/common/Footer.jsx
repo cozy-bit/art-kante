@@ -61,7 +61,7 @@ export function Footer() {
             <div className="space-y-4">
               {/* Загородный дом */}
               <Link
-                to="/concepts"
+                to="/concepts?category=country"
                 className="flex items-center gap-4 group cursor-pointer"
               >
                 <div className="w-9 h-9 flex items-center justify-center shrink-0">
@@ -84,7 +84,7 @@ export function Footer() {
 
               {/* Городская квартира */}
               <Link
-                to="/concepts"
+                to="/concepts?category=apartment"
                 className="flex items-center gap-4 group cursor-pointer"
               >
                 <div className="w-9 h-9 flex items-center justify-center shrink-0">
@@ -108,7 +108,7 @@ export function Footer() {
 
               {/* Общественные места */}
               <Link
-                to="/concepts"
+                to="/concepts?category=public"
                 className="flex items-center gap-4 group cursor-pointer"
               >
                 <div className="w-9 h-9 flex items-center justify-center shrink-0">
@@ -134,7 +134,7 @@ export function Footer() {
 
               {/* Облицовка */}
               <Link
-                to="/concepts"
+                to="/concepts?category=cladding"
                 className="flex items-center gap-4 group cursor-pointer"
               >
                 <div className="w-9 h-9 flex items-center justify-center shrink-0">

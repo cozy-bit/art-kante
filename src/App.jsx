@@ -8,6 +8,7 @@ import Design from './pages/Design/Design'
 import Favorites from './pages/Favorites/Favorites'
 import Portfolio from './pages/Portfolio/Portfolio'
 import Inspiration from './pages/Inspiration/Inspiration'
+import Privacy from './pages/Privacy/Privacy'
 
 function App() {
   return (
@@ -20,8 +21,10 @@ function App() {
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="inspiration" element={<Inspiration />} />
           <Route path="concepts" element={<Concepts />} />
+          <Route path="concepts/:id" element={<Project />} />
           <Route path="project" element={<Project />} />
           <Route path="philosophy" element={<Philosophy />} />
+          <Route path="privacy" element={<Privacy />} />
         </Route>
       </Routes>
     </BrowserRouter>

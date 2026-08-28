@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { Heart, Share2, Check } from 'lucide-react'
 import { ArtplayShowrooms } from '../Inspiration/components/ArtplayShowrooms'
 import img3 from '../../assets/images/project-images/img3.png'
@@ -124,30 +125,32 @@ export function Portfolio() {
 
               return (
                 <article key={item.id} className="flex flex-col group">
-                  {/* Заголовок проекта */}
-                  <h2 className="text-xs sm:text-[13px] font-bold uppercase tracking-wider text-white mb-2.5">
-                    {item.title}
-                  </h2>
+                  <Link to={`/concepts/${item.id}`} className="block group/link cursor-pointer">
+                    {/* Заголовок проекта */}
+                    <h2 className="text-xs sm:text-[13px] font-bold uppercase tracking-wider text-white mb-2.5 group-hover/link:text-[#c58b41] transition-colors">
+                      {item.title}
+                    </h2>
 
-                  {/* Блок изображений (основное + боковой ракурс) */}
-                  <div className="flex gap-1 sm:gap-1.5 h-44 sm:h-56 md:h-60 lg:h-72 w-full overflow-hidden bg-[#141414]">
-                    <div className="w-[78%] h-full overflow-hidden">
-                      <img
-                        src={item.mainImage}
-                        alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                      />
+                    {/* Блок изображений (основное + боковой ракурс) */}
+                    <div className="flex gap-1 sm:gap-1.5 h-44 sm:h-56 md:h-60 lg:h-72 w-full overflow-hidden bg-[#141414]">
+                      <div className="w-[78%] h-full overflow-hidden">
+                        <img
+                          src={item.mainImage}
+                          alt={item.title}
+                          className="w-full h-full object-cover group-hover/link:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="w-[22%] h-full overflow-hidden">
+                        <img
+                          src={item.sideImage}
+                          alt={`${item.title} деталь`}
+                          className="w-full h-full object-cover group-hover/link:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                      </div>
                     </div>
-                    <div className="w-[22%] h-full overflow-hidden">
-                      <img
-                        src={item.sideImage}
-                        alt={`${item.title} деталь`}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
+                  </Link>
 
                   {/* Кнопки действий */}
                   <div className="flex items-center justify-between pt-3 text-xs text-[#8c8c8c]">

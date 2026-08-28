@@ -36,9 +36,8 @@ export function CategoriesSection({ cards, isAnimating, onSelectCard }) {
                   onClick={() => onSelectCard(card)}
                   disabled={isAnimating}
                   style={{ willChange: 'transform' }}
-                  className={`group relative block w-full h-full text-left rounded-none overflow-hidden bg-[#121212] border border-white/[0.04] hover:border-white/25 shadow-[10px_10px_30px_rgba(0,0,0,0.85)] cursor-pointer transform-gpu ${
-                    isAnimating ? 'pointer-events-none' : 'pointer-events-auto'
-                  }`}
+                  className={`group relative block w-full h-full text-left rounded-none overflow-hidden bg-[#121212] border border-white/[0.04] hover:border-white/25 shadow-[10px_10px_30px_rgba(0,0,0,0.85)] cursor-pointer transform-gpu ${isAnimating ? 'pointer-events-none' : 'pointer-events-auto'
+                    }`}
                   title={`Показать "${card.cardLabel || card.title}" в главном экране`}
                 >
                   {/* Фотография карточки с layout="position" для сохранения правильных пропорций */}
